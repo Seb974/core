@@ -1,0 +1,42 @@
+{
+    auto_https disable_redirects
+    # https_port 3000
+    {$DEBUG}
+    servers {
+        protocol {
+            experimental_http3
+        }
+    }
+}
+
+:3000
+
+log
+
+tls /etc/letsencrypt/live/api.teamimit.re/fullchain.pem /etc/letsencrypt/live/api.teamimit.re/privkey.pem
+
+header {
+    Sec-Fetch-Site: same-site
+}
+
+route {
+    # redir / /hub/.well-known/mercure/
+    # encode zstd gzip
+    # https://api.teamimit.re:3000
+
+    mercure {
+        transport_url bolt://mercure.db
+        publisher_jwt 34adz7847y34hdg4f33d01742azze417 HS256
+        subscriber_jwt 34adz7847y34hdg4f33d01742azze417 HS256
+        cors_origins https://admin.teamimit.re https://api.teamimit.re https://api.teamimit.re:3000 https://teamimit.re
+        publish_origins *
+        anonymous true
+        write_timeout 0s
+        subscriptions
+        heartbeat 40s
+    }
+
+    respond /healthz 200
+
+    respond "Not Found" 404
+}

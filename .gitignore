@@ -22,7 +22,13 @@
 ###< lexik/jwt-authentication-bundle ###
 
 ###> symfony/mercure-bundle ###
-/Mercure
+/Mercure/public/
+/Mercure/COPYRIGHT
+/Mercure/LICENSE
+/Mercure/mercure
+/Mercure/README.md
+/Mercure/Caddyfile
+/Mercure/Caddyfile.dev
 /mercure.db
 ###< symfony/mercure-bundle ###
 
