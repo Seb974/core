@@ -79,6 +79,54 @@ class Farm
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $energy;
+
+    /**
+     * @ORM\Column(type="string", length=4, nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $beginAt;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $investmentCost;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $computer;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $power;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $dailyProfit;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $profitPercent;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $partPrice;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -164,6 +212,102 @@ class Farm
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getEnergy(): ?string
+    {
+        return $this->energy;
+    }
+
+    public function setEnergy(?string $energy): self
+    {
+        $this->energy = $energy;
+
+        return $this;
+    }
+
+    public function getBeginAt(): ?string
+    {
+        return $this->beginAt;
+    }
+
+    public function setBeginAt(?string $beginAt): self
+    {
+        $this->beginAt = $beginAt;
+
+        return $this;
+    }
+
+    public function getInvestmentCost(): ?float
+    {
+        return $this->investmentCost;
+    }
+
+    public function setInvestmentCost(?float $investmentCost): self
+    {
+        $this->investmentCost = $investmentCost;
+
+        return $this;
+    }
+
+    public function getComputer(): ?int
+    {
+        return $this->computer;
+    }
+
+    public function setComputer(?int $computer): self
+    {
+        $this->computer = $computer;
+
+        return $this;
+    }
+
+    public function getPower(): ?string
+    {
+        return $this->power;
+    }
+
+    public function setPower(?string $power): self
+    {
+        $this->power = $power;
+
+        return $this;
+    }
+
+    public function getDailyProfit(): ?float
+    {
+        return $this->dailyProfit;
+    }
+
+    public function setDailyProfit(?float $dailyProfit): self
+    {
+        $this->dailyProfit = $dailyProfit;
+
+        return $this;
+    }
+
+    public function getProfitPercent(): ?float
+    {
+        return $this->profitPercent;
+    }
+
+    public function setProfitPercent(?float $profitPercent): self
+    {
+        $this->profitPercent = $profitPercent;
+
+        return $this;
+    }
+
+    public function getPartPrice(): ?float
+    {
+        return $this->partPrice;
+    }
+
+    public function setPartPrice(?float $partPrice): self
+    {
+        $this->partPrice = $partPrice;
 
         return $this;
     }
