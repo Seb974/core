@@ -7,6 +7,9 @@ use App\Repository\MetaRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+
+// mercure="object.getMercureOptions(object.getUser().getId())"
+
 /**
  * @ORM\Entity(repositoryClass=MetaRepository::class)
  * @ApiResource(
@@ -24,7 +27,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  *          "PATCH"={"security"="is_granted('ROLE_ADMIN') or object.getUser() == user"},
  *          "DELETE"={"security"="is_granted('ROLE_ADMIN') or object.getUser() == user"}
  *     },
- *     mercure="object.getMercureOptions(object.getUser().getId())"
  * )
  */
 class Meta
