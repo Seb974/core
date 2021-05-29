@@ -55,6 +55,30 @@ class Farm
      */
     private $position = [];
 
+    /**
+     * @ORM\Column(type="string", length=15, nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $zipcode;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $address;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $address2;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     * @Groups({"farms_read"})
+     */
+    private $description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -92,6 +116,54 @@ class Farm
     public function setPosition(?array $position): self
     {
         $this->position = $position;
+
+        return $this;
+    }
+
+    public function getZipcode(): ?string
+    {
+        return $this->zipcode;
+    }
+
+    public function setZipcode(?string $zipcode): self
+    {
+        $this->zipcode = $zipcode;
+
+        return $this;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(?string $address): self
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getAddress2(): ?string
+    {
+        return $this->address2;
+    }
+
+    public function setAddress2(?string $address2): self
+    {
+        $this->address2 = $address2;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
