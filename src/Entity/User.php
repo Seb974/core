@@ -10,6 +10,8 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
+// mercure={"private"=true, "normalization_context"={"group"="users_read"}},
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(
@@ -34,7 +36,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  *          "PATCH"={"security"="is_granted('ROLE_ADMIN') or object == user"},
  *          "DELETE"={"security"="is_granted('ROLE_ADMIN') or object == user"}
  *     },
- *     mercure={"private"=true, "normalization_context"={"group"="users_read"}},
  * )
  */
 class User implements UserInterface
