@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
-use App\Controller\CreateMediaObjectAction;
+use App\Controller\CreatePictureAction;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -57,7 +57,7 @@ class Picture
      *
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
-     * @Groups({"picture_read", "products_read"})
+     * @Groups({"picture_read", "products_read", "farms_read"})
      * @ORM\Id
      */
     protected $id;
@@ -66,7 +66,7 @@ class Picture
      * @var string|null
      *
      * @ApiProperty(iri="http://schema.org/contentUrl")
-     * @Groups({"picture_read", "products_read"})
+     * @Groups({"picture_read", "products_read", "farms_read"})
      */
     public $contentUrl;
 
@@ -82,7 +82,7 @@ class Picture
      * @var string|null
      *
      * @ORM\Column(nullable=true)
-     * @Groups({"picture_read", "products_read"})
+     * @Groups({"picture_read", "products_read", "farms_read"})
      */
     public $filePath;
 
