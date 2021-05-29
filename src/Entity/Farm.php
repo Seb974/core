@@ -127,6 +127,12 @@ class Farm
      */
     private $partPrice;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Picture::class, cascade={"persist", "remove"})
+     * @Groups({"farms_read"})
+     */
+    private $picture;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -308,6 +314,18 @@ class Farm
     public function setPartPrice(?float $partPrice): self
     {
         $this->partPrice = $partPrice;
+
+        return $this;
+    }
+
+    public function getPicture(): ?Picture
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?Picture $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }
