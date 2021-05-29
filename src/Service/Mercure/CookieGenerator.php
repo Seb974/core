@@ -67,13 +67,13 @@ class CookieGenerator
         $id = $user != null ? $user->getId() : 0;
         $teamPrivateChannels = [
             $this->domain . "/api/users/{id}",                      // users updates
-            $this->domain . "/api/users/{id}/metas",                // metas users updates
-            $this->domain . "/api/users/{id}/shipments",            // shipments updates
+            // $this->domain . "/api/users/{id}/metas",                // metas users updates
+            // $this->domain . "/api/users/{id}/shipments",            // shipments updates
             $this->domain . "/api/private",                         // general updates (unused)
         ];
         $selfPrivateChannels = [
             $this->domain . "/api/users/" . $id,                    // self updates
-            $this->domain . "/api/users/" . $id . "/metas",         // self metas updates
+            // $this->domain . "/api/users/" . $id . "/metas",         // self metas updates
             $this->domain . "/api/users/" . $id . "/shipments",     // shipments updates
         ];
         return $user == null ? [] : 

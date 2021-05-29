@@ -9,7 +9,6 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 // mercure="object.getMercureOptions(object.getUser().getId())"
-
 /**
  * @ORM\Entity(repositoryClass=MetaRepository::class)
  * @ApiResource(
