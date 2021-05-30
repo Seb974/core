@@ -16,11 +16,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  *          "groups"={"farms_read"}
  *     },
  *     collectionOperations={
- *          "GET"={"security"="is_granted('ROLE_ADMIN')"},
- *          "POST"
+ *          "GET",
+ *          "POST"={"security"="is_granted('ROLE_ADMIN')"}
  *     },
  *     itemOperations={
- *          "GET"={"security"="is_granted('ROLE_ADMIN')"},
+ *          "GET",
  *          "PUT"={"security"="is_granted('ROLE_ADMIN')"},
  *          "PATCH"={"security"="is_granted('ROLE_ADMIN')"},
  *          "DELETE"={"security"="is_granted('ROLE_ADMIN')"}
