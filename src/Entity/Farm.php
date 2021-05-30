@@ -33,103 +33,103 @@ class Farm
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=120, nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=120, nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $city;
 
     /**
      * @ORM\Column(type="array", nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $position = [];
 
     /**
      * @ORM\Column(type="string", length=15, nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $zipcode;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $address;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $address2;
 
     /**
      * @ORM\Column(type="text", nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $energy;
 
     /**
      * @ORM\Column(type="string", length=4, nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $beginAt;
 
     /**
      * @ORM\Column(type="float", nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $investmentCost;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $computer;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $power;
 
     /**
      * @ORM\Column(type="float", nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $dailyProfit;
 
     /**
      * @ORM\Column(type="float", nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $profitPercent;
 
     /**
      * @ORM\Column(type="float", nullable=true)
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $partPrice;
 
     /**
      * @ORM\OneToOne(targetEntity=Picture::class, cascade={"persist", "remove"})
-     * @Groups({"farms_read"})
+     * @Groups({"farms_read", "ads_read"})
      */
     private $picture;
 
